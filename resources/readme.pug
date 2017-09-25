@@ -62,10 +62,22 @@ html
 										li 
 											b #{key} 
 											span #{dep}
-							p
-								if code_stats
-									h3 Stats
-									pre.code_stats !{code_stats}
+							if codeStats
+								hr
+								h3 Stats
+								div.code_stats
+									p
+										|Using 
+										a(href=codeStats.repoUrl)= codeStats.repoName
+										| v#{codeStats.version}
+									table
+										tr
+											each head in codeStats.header
+												th= head
+										each line in codeStats.languages
+											tr
+												each cell in line
+													td= cell
 						td#content.code !{content}  
 			if context.config.show_timestamp
 				div#generated generated #{new Date()}  
