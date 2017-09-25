@@ -64,7 +64,7 @@ div.dox
 						div.dox_tag_types
 							span Types: 
 							each type in tag.types
-								span(class="dox_type type-#{type.toLowerCase()}")
+								span(class=`dox_type type-${ type.toLowerCase()}`)
 									| #{type}
 									
 					when "namespace"
@@ -125,7 +125,7 @@ div.dox
 						th Types
 						th Description
 					each property in properties
-						- var types = property.types.map(function(type){return type.replace(/\./g, '<span class="sep">.</span>')});
+						- const types = (property.types || []).map(function(type){return type.replace(/\./g, '<span class="sep">.</span>')});
 						tr.dox_property
 							td #{property.name}
 							td !{types.join('<span class="sep">|</span>')}
