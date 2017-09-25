@@ -1,5 +1,3 @@
-- var root_path = relative_base(file_path, context)
-- root_path = (root_path == "./") ? root_path : root_path.replace(/[^\/]+/g, '..')
 - var emailRegex = new RegExp(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
 - function gravatarDecorator(str, gravatar) {
 -   // pretty lame way of doing this for now
@@ -13,12 +11,12 @@
 -     return str;
 -   }
 - }
-!!! 5
+doctype html
 html
   head
     title=title
     meta( http-equiv='Content-Type', content='text/html', charset='UTF-8')
-    link( rel='stylesheet', media='all', href="#{root_path}docco.css" )
+    link( rel='stylesheet', media='all', href="#{relativeTo(file_path, 'docco.css')}" )
   body
     div#container
       div#background
@@ -44,7 +42,7 @@ html
                   p #{package_json.description}
 
                 if content_index
-                  !{content_index}
+                   | !{ content_index }
                 if package_json.version
                   h3 Version
                   p #{package_json.version}

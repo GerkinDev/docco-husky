@@ -1,60 +1,4 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "https://github.com/GerkinDev/docco-husky.git",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "https://github.com/GerkinDev/docco-husky.git",
-        "spec": "git+https://github.com/GerkinDev/docco-husky.git",
-        "type": "hosted",
-        "hosted": {
-          "type": "github",
-          "ssh": "git@github.com:GerkinDev/docco-husky.git",
-          "sshUrl": "git+ssh://git@github.com/GerkinDev/docco-husky.git",
-          "httpsUrl": "git+https://github.com/GerkinDev/docco-husky.git",
-          "gitUrl": "git://github.com/GerkinDev/docco-husky.git",
-          "shortcut": "github:GerkinDev/docco-husky",
-          "directUrl": "https://raw.githubusercontent.com/GerkinDev/docco-husky/master/package.json"
-        }
-      },
-      "/Users/gerkin/Desktop/Work/nodejs/Diaspora"
-    ]
-  ],
-  "_from": "git+https://github.com/GerkinDev/docco-husky.git",
-  "_id": "docco-husky@0.3.3",
-  "_inCache": true,
-  "_location": "/docco-husky",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "https://github.com/GerkinDev/docco-husky.git",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "https://github.com/GerkinDev/docco-husky.git",
-    "spec": "git+https://github.com/GerkinDev/docco-husky.git",
-    "type": "hosted",
-    "hosted": {
-      "type": "github",
-      "ssh": "git@github.com:GerkinDev/docco-husky.git",
-      "sshUrl": "git+ssh://git@github.com/GerkinDev/docco-husky.git",
-      "httpsUrl": "git+https://github.com/GerkinDev/docco-husky.git",
-      "gitUrl": "git://github.com/GerkinDev/docco-husky.git",
-      "shortcut": "github:GerkinDev/docco-husky",
-      "directUrl": "https://raw.githubusercontent.com/GerkinDev/docco-husky/master/package.json"
-    }
-  },
-  "_requiredBy": [
-    "#DEV:/",
-    "#USER",
-    "/grunt-docco-husky"
-  ],
-  "_resolved": "git+https://github.com/GerkinDev/docco-husky.git#33a09515cd88b83224934781c9e4152edee089c5",
-  "_shasum": "4570f51030ee43e4bfe200a23aab9983d9c3cec2",
-  "_shrinkwrap": null,
-  "_spec": "https://github.com/GerkinDev/docco-husky.git",
-  "_where": "/Users/gerkin/Desktop/Work/nodejs/Diaspora",
   "author": {
     "name": "Mike Brevoort",
     "email": "mike@brevoort.com"
@@ -77,10 +21,10 @@
   "dependencies": {
     "coffee-script": "latest",
     "commander": ">=0.5.2",
-    "dox": "0.1.2",
+    "dox": "^0.9.0",
     "gravatar": "1.0.3",
-    "jade": "0.17.0",
-    "underscore": "1.2.x",
+    "jade": "^1.11.0",
+    "lodash": "^4.17.4",
     "walk": "2.0.2"
   },
   "description": "Generated static project documentation primarily for node.js projects. A fork of Docco",

@@ -18,18 +18,6 @@ ASP
     extension asp
     3rd_gen_scale 1.29
     end_of_line_continuation \\$
-ASP.Net
-    filter call_regexp_common C
-    extension asax
-    extension ascx
-    extension asmx
-    extension aspx
-    extension config
-    extension master
-    extension sitemap
-    extension webinfo
-    3rd_gen_scale 1.29
-    end_of_line_continuation \\$
 ActionScript
     filter remove_matches ^\s*//
     filter call_regexp_common C
@@ -276,7 +264,7 @@ Java
     extension java
     3rd_gen_scale 1.36
     end_of_line_continuation \\$
-Javascript
+JavaScript
     filter remove_matches ^\s*//
     filter call_regexp_common C
     filter remove_inline //.*$
@@ -323,7 +311,7 @@ MATLAB
     filter remove_inline %.*$
     3rd_gen_scale 4.00
     end_of_line_continuation \.\.\.\s*$
-MSBuild scripts
+MSBuild script
     filter remove_html_comments
     filter call_regexp_common HTML
     extension csproj
@@ -350,7 +338,7 @@ NASTRAN DMAP
     filter remove_inline \$.*$
     extension dmap
     3rd_gen_scale 2.35
-NAnt scripts
+NAnt script
     filter remove_html_comments
     filter call_regexp_common HTML
     extension build
@@ -368,7 +356,7 @@ Objective C++
     extension mm
     3rd_gen_scale 2.96
     end_of_line_continuation \\$
-Ocaml
+OCaml
     filter call_regexp_common Pascal
     extension ml
     3rd_gen_scale 3.00
