@@ -43,6 +43,7 @@ div.dox
 						div.dox_tag_detail 
 							span.dox_type #{tag.visibility}
 
+					when "function"
 					when "method"
 						div.dox_tag_title Method <em>#{tag.string}</em>
 
@@ -81,6 +82,14 @@ div.dox
 						div.dox_tag_title #{tag.type.charAt(0).toUpperCase() + tag.type.slice(1).toLowerCase()}:
 						div.dox_tag_detail !{tag.html}
 						
+					when "throws"
+						div.dox_tag_title Throws:
+						div.dox_tag_types
+							span Type: 
+							span(class=`dox_type type-${ tag.types[0].toLowerCase()}`)
+								| #{tag.types[0]}
+						div.dox_tag_detail !{tag.description
+						
 					when "memberof"
 						div.dox_tag_title In: <em>#{tag.string}</em>
 						
@@ -94,6 +103,7 @@ div.dox
 						
 					when "instance"
 					when "static"
+					when "inner"
 						- scope.object = tag.type
 						
 						

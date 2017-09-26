@@ -18,10 +18,10 @@ html
 						th.code
 				tbody
 					each section, i in sections
-						tr(id="section-#{ i + 1}")
+						tr(id=`section-${ i + 1}`)
 							td.docs
 								div.pilwrap
-									a.pilcrow(href="#section-#{i+1}") &#182;
+									a.pilcrow(href=`#section-${i+1}`) &#182;
 								| !{section.docs_html}
 							td.code
 								| !{section.code_html}
