@@ -114,7 +114,29 @@ div.dox
 						
 						
 						
-							
+						
+					when "event"
+						div.dox_tag_title Event: !{tag.html}
+						
+					when "readonly"
+						div.dox_tag_title Read-only
+						
+					when "name"
+						div.dox_tag_title Name:
+						div.dox_tag_detail !{tag.html}
+						
+					when "fires"
+						div.dox_tag_title Fires:
+						div.dox_tag_detail !{tag.html}
+						
+					when "extends"
+						div.dox_tag_title Inherits from:
+						div.dox_tag_detail !{tag.html}
+						
+					when "listens"
+						div.dox_tag_title Listens to:
+						div.dox_tag_detail !{tag.html}
+						
 					default
 						div.dox_tag_title #{tag.type}
 						div.dox_tag_detail
