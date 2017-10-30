@@ -1,14 +1,8 @@
 {
-	"authors": [
-		{
-			"name": "Mike Brevoort",
-			"email": "mike@brevoort.com"
-		},
-		{
-			"name": "Gerkin",
-			"homepage": "https://github.com/GerkinDev"
-		}
-	],
+	"author": {
+		"name": "Mike Brevoort",
+		"email": "mike@brevoort.com"
+	},
 	"bin": {
 		"docco-husky": "./bin/generate"
 	},
@@ -22,17 +16,20 @@
 		},
 		{
 			"name": "Jeremy Ashkenas"
+		},
+		{
+			"name": "Gerkin",
+			"homepage": "https://github.com/GerkinDev"
 		}
 	],
 	"dependencies": {
-		"coffee-script": "latest",
+		"bluebird": "^3.5.1",
 		"commander": ">=0.5.2",
 		"dox": "^0.9.0",
 		"gravatar": "1.0.3",
-		"pug": "2.0.0-rc.4",
 		"lodash": "^4.17.4",
+		"pug": "2.0.0-rc.4",
 		"walk": "2.0.2"
-		"bluebird": "^3.5.1"
 	},
 	"description": "Generated static project documentation primarily for node.js projects. A fork of Docco",
 	"directories": {
