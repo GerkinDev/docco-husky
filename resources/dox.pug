@@ -11,10 +11,10 @@ div.dox
 						if !hasParams
 							div.dox_tag_title Params
 							- hasParams = true
-						div.dox_tag_detail 
-							span #{tag.name} 
+						div.dox_tag_detail
+							span #{tag.name}
 							if tag.types
-								each type in tag.types 
+								each type in tag.types
 									span.dox_type #{type}
 							if tag.description
 								span - !{tag.description}
@@ -25,7 +25,7 @@ div.dox
 							div.dox_tag_title Returns
 							- hasReturn = true
 						div.dox_tag_detail
-							each type in tag.types 
+							each type in tag.types
 								span.dox_type #{type}
 							if tag.description
 								span !{tag.description}
@@ -35,12 +35,12 @@ div.dox
 							div.dox_tag_title Type
 							- hasType = true
 						div.dox_tag_detail
-							each type in tag.types 
+							each type in tag.types
 								span.dox_type #{type}
 
 					when "api"
 						div.dox_tag_title API
-						div.dox_tag_detail 
+						div.dox_tag_detail
 							span.dox_type #{tag.visibility}
 
 					when "function"
@@ -55,100 +55,100 @@ div.dox
 									if tag.title
 										#{tag.title}
 									else
-										#{tag.url} 
+										#{tag.url}
 							if tag.local
 								span.dox_type #{tag.local}
-								
+
 					when "typedef"
 						- var typedefName = tag.string.replace(/\{.*?\}\s+/, '');
 						div.dox_tag_title Typedef <em>#{typedefName}</em>
 						div.dox_tag_types
-							span Types: 
+							span Types:
 							each type in tag.types
 								span(class=`dox_type type-${ type.toLowerCase()}`)
 									| #{type}
-									
+
 					when "namespace"
 						div.dox_tag_title Namespace <em>#{tag.string}</em>
-						
+
 					when "class"
 						div.dox_tag_title Class <em>#{tag.string}</em>
-						
+
 					when "classdesc"
 						div.dox_tag_detail !{tag.string}
-						
+
 					when "summary"
 					when "description"
 						div.dox_tag_title #{tag.type.charAt(0).toUpperCase() + tag.type.slice(1).toLowerCase()}:
 						div.dox_tag_detail !{tag.html}
-						
+
 					when "throws"
 						div.dox_tag_title Throws:
 						div.dox_tag_types
-							span Type: 
-							span(class=`dox_type type-${ tag.types[0].toLowerCase()}`)
+							span Type:
+							span(class=`dox_type type-${ tag.types[0] ? tag.types[0].toLowerCase() : 'undefined' }`)
 								| #{tag.types[0]}
 						div.dox_tag_detail !{tag.description
-						
+
 					when "memberof"
 						div.dox_tag_title In: <em>#{tag.string}</em>
-						
+
 					when "property"
 						- properties.push(tag)
-						
+
 					when "author"
 						- author = tag.string
-						
-						
-						
+
+
+
 					when "instance"
 					when "static"
 					when "inner"
 						- scope.object = tag.type
-						
-						
+
+
 					when "public"
 					when "protected"
 					when "private"
 						- scope.modifier = tag.type
-						
-						
-						
-						
+
+
+
+
 					when "event"
 						div.dox_tag_title Event: !{tag.html}
-						
+
 					when "readonly"
 						div.dox_tag_title Read-only
-						
+
 					when "name"
 						div.dox_tag_title Name:
 						div.dox_tag_detail !{tag.html}
-						
+
 					when "fires"
 						div.dox_tag_title Fires:
 						div.dox_tag_detail !{tag.html}
-						
+
 					when "extends"
 						div.dox_tag_title Inherits from:
 						div.dox_tag_detail !{tag.html}
-						
+
 					when "listens"
 						div.dox_tag_title Listens to:
 						div.dox_tag_detail !{tag.html}
-						
+
 					default
 						div.dox_tag_title #{tag.type}
 						div.dox_tag_detail
 							| #{JSON.stringify(tag)}
-							
+
 			if scope.object || scope.modifier
-				div.dox_tag_title Scope: 
+				div.dox_tag_title Scope:
 					if scope.object
 						span.object #{scope.object}
 					if scope.modifier
 						span.modifier #{scope.modifier}
-			
+
 			if properties.length > 0
 				div.dox_tag_title Properties
 				table.dox_properties.dox_tag_detail
@@ -162,7 +162,7 @@ div.dox
 							td #{property.name}
 							td !{types.join('<span class="sep">|</span>')}
 							td !{property.description}
-					
+
 			if author
 				div.dox_tag_title Author
 				div.dox_tag_detail

@@ -32,14 +32,14 @@ html
 						td.docs
 							if package_json && package_json.name
 								if package_json.name
-									h1 
-										if package_json.homepage 
-											a( href="#{package_json.homepage}")
-												#{package_json.name}
+									h1
+										if package_json.homepage
+											a( href="${package_json.homepage}")
+												| ${package_json.name}
 										else
-											#{package_json.name}
+											| ${package_json.name}
 								if package_json.description
-									p #{package_json.description}
+									p ${package_json.description}
 
 								if content_index
 									| !{ content_index }
@@ -56,18 +56,18 @@ html
 								if package_json.repository && package_json.repository.type && package_json.repository.url
 									h3 Repository
 									p #{package_json.repository.type} - #{package_json.repository.url}
-								h3 Dependencies 
+								h3 Dependencies
 								ul
 									each dep, key in package_json.dependencies
-										li 
-											b #{key} 
+										li
+											b #{key}
 											span #{dep}
 							if codeStats
 								hr
 								h3 Stats
 								div.code_stats
 									p
-										|Using 
+										|Using
 										a(href=codeStats.repoUrl)= codeStats.repoName
 										|  v#{codeStats.version}
 									table
@@ -78,8 +78,8 @@ html
 											tr
 												each cell in line
 													td= cell
-						td#content.code !{content}  
+						td#content.code !{content}
 			if context.config.show_timestamp
-				div#generated generated #{new Date()}  
+				div#generated generated #{new Date()}
 
 			include includes/project_name
