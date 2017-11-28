@@ -26,6 +26,7 @@
 		"bluebird": "^3.5.1",
 		"commander": ">=0.5.2",
 		"dox": "^0.9.0",
+		"escape-string-regexp": "^1.0.5",
 		"gravatar": "1.0.3",
 		"lodash": "^4.17.4",
 		"pug": "2.0.0-rc.4",
