@@ -1,4 +1,4 @@
-var foo;
+var foo = "aze";
 /** Test multiline comment 1 **/
 var bar;
 /**
