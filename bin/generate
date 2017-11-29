@@ -1,8 +1,18 @@
 #!/usr/bin/env node
 
-var path = require('path');
-var fs = require('fs');
-var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+const path = require('path');
+const fs = require('fs');
+const commander = require('commander');
 
-//process.ARGV = process.argv = process.argv.slice(2, process.argv.length);
-require(lib + '/docco.js').run();
+let files = [];
+// Define our CLI
+commander.version( require( `${ __dirname }/../package.json` ).version ).name = 'docco';
+commander.arguments('<files...>').action(cmdFiles => files = cmdFiles);
+commander.parse( process.argv );
+
+if(files.length === 0){
+	commander.help();
+}
+
+// Call main lib file
+require('../index')({files});

@@ -23,6 +23,7 @@
 		}
 	],
 	"dependencies": {
+		"acorn": "^5.2.1",
 		"bluebird": "^3.5.1",
 		"chalk": "^2.3.0",
 		"commander": "^2.12.2",
