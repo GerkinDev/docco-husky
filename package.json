@@ -4,10 +4,10 @@
 		"homepage": "https://github.com/GerkinDev"
 	},
 	"bin": {
-		"docco-husky": "./bin/generate"
+		"dochow": "./bin/dochow"
 	},
 	"bugs": {
-		"url": "https://github.com/GerkinDev/docco-husky/issues"
+		"url": "https://github.com/GerkinDev/dochow/issues"
 	},
 	"contributors": [
 		{
@@ -30,18 +30,16 @@
 		"javascript-state-machine": "^3.0.1",
 		"lodash": "^4.17.4",
 		"pug": "2.0.0-rc.4",
-		"walk": "2.0.2",
 		"winston": "^3.0.0-rc1"
 	},
-	"description": "Generated static project documentation primarily for node.js projects. A fork of Docco",
+	"description": "Generated static project documentation for node.js projects. A fork of Docco & Docco-Husky",
 	"directories": {
 		"lib": "./lib"
 	},
 	"engines": {
 		"node": ">=0.4.0"
 	},
-	"gitHead": "33a09515cd88b83224934781c9e4152edee089c5",
-	"homepage": "https://github.com/GerkinDev/docco-husky#readme",
+	"homepage": "https://github.com/GerkinDev/dochow#readme",
 	"keywords": [
 		"documentation",
 		"docs",
@@ -54,11 +52,11 @@
 		}
 	],
 	"main": "./index.js",
-	"name": "docco-husky",
+	"name": "dochow",
 	"optionalDependencies": {},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/GerkinDev/docco-husky.git"
+		"url": "git://github.com/GerkinDev/dochow.git"
 	},
 	"scripts": {
 		"install": "scripts/install.sh"
