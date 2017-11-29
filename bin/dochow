@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const fs = require('fs');
+const commander = require('commander');
+const chalk = require('chalk');
+const package = require( `${ __dirname }/../package.json` );
+
+const increaseVerbosity = (v, total) => {
+	return total + 1;
+}
+
+let files = [];
+// Define our CLI
+commander.version( package.version ).description(package.description);
+commander
+	.option('-c, --cwd <path>', 'Change the working directory', process.cwd())
+	.option('-v, --verbosity', 'Increase verbosity level. Repeatable', increaseVerbosity, 0)
+	.option('-p, --package-file <file>', `${chalk.bold('package.json')} file to use`, 'package.json')
+	.option('--no-package', `Do not use any ${chalk.bold('package.json')}`)
+	.option('-C, --config-file <file>', `Configuration file to use`, '.dochow.json')
+	.option('--no-config', `Do not use any configuration file`)
+	.option('-o, --output <dir|path>', `Output directory`)
+	.option('-S, --single-file <file>', `Handle a single file`)
+	.option('-t, --template-dir <dir>', 'Use custom template')
+	.arguments('[files...]');
+commander.parse( process.argv );
+
+const options = commander.opts();
+
+// Handle options
+if(options.package === false){
+	options.packageFile = false;
+}
+delete options.package;
+if(options.config === false){
+	options.configFile = false;
+}
+delete options.config;
+options.files = commander.args;
+
+// Call main lib file
+require('../index')(options);
